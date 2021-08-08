@@ -1,0 +1,224 @@
+/*
+
+------------------------------------------
+| 1. Fonts                               |
+------------------------------------------
+| 2. Global Document Settings            |
+------------------------------------------
+| 3. Header                              |
+------------------------------------------
+| 4. About                               |
+------------------------------------------
+| 5. Contact                             |
+------------------------------------------
+| 6. Footer                              |
+------------------------------------------
+| 7. Credit                              |
+------------------------------------------
+
+*/
+
+/* Fonts */
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("/assets/fonts/Roboto-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+/* End Fonts */
+
+/* Global */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --primary-color: blue;
+  --secondary-color: red;
+  --highlight-color: yellow;
+
+  --header-font: "sans-serif";
+  --header-font-size: 34px;
+  --header-font-weight: 800;
+  --header-font-color: var(--black);
+  --header-font-transform: uppercase;
+  --header-font-style: normal;
+
+  --body-font: "Roboto", sans-serif;
+  --body-font-size: 18px;
+  --body-font-weight: 400;
+  --body-font-color: var(--black);
+  --body-font-style: normal;
+}
+
+.document-container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .document-container {
+    width: 960px;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .document-container {
+    width: 768px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .document-container {
+    width: 550px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .document-container {
+    width: 380px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .document-container {
+    width: 320px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .document-container {
+    width: 300px;
+  }
+}
+
+/* End Global */
+
+/* Header */
+
+/* End Header */
+
+/* About */
+
+/* End About */
+
+/* Contact */
+
+/* End Contact */
+
+/* Footer */
+
+footer {
+  width: 100%;
+  background: transparent;
+}
+
+footer .document-container p {
+  margin: 0 auto;
+  padding: 15px 0;
+  font-size: var(--body-font-size);
+  font-style: var(--body-font-style);
+  color: var(--black);
+  text-align: center;
+}
+/* End Footer */
+
+/* 
+______ _____ _____ _____ _____  _   _  ___________                                     
+|  _  \  ___/  ___|_   _|  __ \| \ | ||  ___|  _  \                                    
+| | | | |__ \ `--.  | | | |  \/|  \| || |__ | | | |                                    
+| | | |  __| `--. \ | | | | __ | . ` ||  __|| | | |                                    
+| |/ /| |___/\__/ /_| |_| |_\ \| |\  || |___| |/ /                                     
+|___/ \____/\____/ \___/ \____/\_| \_/\____/|___/ 
+  ___   _   _______     ______ _   _ _____ _    _____                                  
+ / _ \ | \ | |  _  \    | ___ \ | | |_   _| |  |_   _|                                 
+/ /_\ \|  \| | | | |    | |_/ / | | | | | | |    | |                                   
+|  _  || . ` | | | |    | ___ \ | | | | | | |    | |                                   
+| | | || |\  | |/ /     | |_/ / |_| |_| |_| |____| |                                   
+\_| |_/\_| \_/___/      \____/ \___/ \___/\_____/\_/                                  
+________   __       ___  ___  _____  _   __     _       ___  ______  _____ _____ _   _ 
+| ___ \ \ / /      |_  |/ _ \/  __ \| | / /    | |     / _ \ | ___ \/  ___|  ___| \ | |
+| |_/ /\ V /         | / /_\ \ /  \/| |/ /     | |    / /_\ \| |_/ /\ `--.| |__ |  \| |
+| ___ \ \ /          | |  _  | |    |    \     | |    |  _  ||    /  `--. \  __|| . ` |
+| |_/ / | |      /\__/ / | | | \__/\| |\  \    | |____| | | || |\ \ /\__/ / |___| |\  |
+\____/  \_/      \____/\_| |_/\____/\_| \_/    \_____/\_| |_/\_| \_|\____/\____/\_| \_/
+
+github.com/mememoomoo/
+linkedin.com/in/jack-larsen-760302138/
+
+*/
