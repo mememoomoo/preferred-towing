@@ -5,13 +5,15 @@
 ------------------------------------------
 | 2. Global Document Settings            |
 ------------------------------------------
-| 3. Header                              |
+| 3. Navigation                          |
 ------------------------------------------
-| 4. About                               |
+| 4. Header                              |
 ------------------------------------------
-| 5. Contact                             |
+| 5. About                               |
 ------------------------------------------
-| 6. Footer                              |
+| 6. Contact                             |
+------------------------------------------
+| 7. Footer                              |
 ------------------------------------------
 | 7. Credit                              |
 ------------------------------------------
@@ -126,9 +128,34 @@
   --body-font-style: normal;
 }
 
+h1,
+h2,
+h3 {
+  font-family: var(--header-font);
+  font-size: var(--header-font-size);
+  font-weight: var(--header-font-weight);
+  color: var(--header-font-color);
+  text-transform: var(--header-font-transform);
+  font-style: var(--header-font-style);
+}
+
+a, 
+a:visited,
+a:focus,
+a:hover,
+body {
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  color: var(--body-font-color);
+  font-style: var(--body-font-style);
+  text-decoration: none;
+}
+
 .document-container {
-  margin: 0 auto;
+  margin: auto;
   width: 1200px;
+  padding: 0
 }
 
 @media only screen and (max-width: 1200px) {
@@ -169,15 +196,139 @@
 
 /* End Global */
 
-/* Header */
+/* Navigation */
+  nav {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    position: fixed;
+    z-index: 100
+  }
 
+  .navigation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-wrapper {
+    order: 1;
+    flex: 50%
+  }
+
+  .logo {
+    width: 175px;
+    height: auto;
+  }
+
+  .menu-wrapper {
+    order: 2;
+    flex: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center
+  }
+
+  @media only screen and (max-width: 320px) {
+    .navigation-wrapper {
+      justify-content: center
+    }
+    .logo-wrapper {
+      flex: 100%;
+      width: auto
+    }
+
+    .menu-wrapper {
+      display: none
+    }
+  }
+
+  .menu-ul {
+    display: flex;
+    padding: 15px 0
+  }
+
+  .about-li {
+    order: 1;
+    padding-right: 10px
+  }
+
+  .contact-li {
+    order: 2
+  }
+
+/* End Navigation */
+
+/* Header */
+  header {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .header-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden
+  }
+  
+  .header-tow-truck-wrapper {
+    --width: 1064px;
+    position: absolute;
+    width: var(--width);
+    height: calc(0.2706766917293233 * var(--width));
+    bottom: 0;
+    left: calc(50% - var(--width)/2);
+  }
+
+  .blob {
+    position: absolute;
+    z-index: -7;
+    transform: translate(-50%, -50%);
+    animation: blob-transform 12s linear infinite;
+  }
+
+  .blob-1 {
+    --width: 660px;
+    background: linear-gradient(217deg, #18a7ae, #7046aa);
+    width: var(--width);
+    height: var(--width);
+    top: 0;
+    left: 0;
+  }
+
+  .blob-2 {
+    --width: 660px;
+    background: linear-gradient(217deg, #18a7ae, #7046aa);
+    width: var(--width);
+    height: var(--width);
+    top: 100%;
+    left: 100%;
+  }
+
+  @keyframes blob-transform{
+    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
+  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+}
 /* End Header */
 
 /* About */
-
+  #about {
+    width: 100vw;
+    height: 100vh;
+  }
 /* End About */
 
 /* Contact */
+  #contact {
+    width: 100vw;
+    height: 100vh;
+  }
 
 /* End Contact */
 
