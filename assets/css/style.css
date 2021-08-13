@@ -108,35 +108,27 @@
 
 /* Global */
 :root {
-  --black: #000000;
-  --white: #ffffff;
-  --primary-color: blue;
-  --secondary-color: red;
-  --highlight-color: yellow;
+  --black: #403233;
+  --white: #F19A3E;
+  --primary-color: #98D9C2;
+  --secondary-color: #ABEDC6;
+  --highlight-color: #B9FFB7;
+}
 
-  --header-font: "sans-serif";
-  --header-font-size: 34px;
-  --header-font-weight: 800;
-  --header-font-color: var(--black);
-  --header-font-transform: uppercase;
-  --header-font-style: normal;
-
-  --body-font: "Roboto", sans-serif;
-  --body-font-size: 18px;
-  --body-font-weight: 400;
-  --body-font-color: var(--black);
-  --body-font-style: normal;
+body {
+  font-size: 10px
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--header-font);
-  font-size: var(--header-font-size);
-  font-weight: var(--header-font-weight);
-  color: var(--header-font-color);
-  text-transform: var(--header-font-transform);
-  font-style: var(--header-font-style);
+  font-family: "Roboto", sans-serif;;
+  font-size: 2.4em;
+  font-weight: 800;
+  color: var(--black);
+  text-transform: uppercase;
+  font-style: normal;
+  text-decoration: none;
 }
 
 a, 
@@ -144,11 +136,11 @@ a:visited,
 a:focus,
 a:hover,
 body {
-  font-family: var(--body-font);
-  font-size: var(--body-font-size);
-  font-weight: var(--body-font-weight);
-  color: var(--body-font-color);
-  font-style: var(--body-font-style);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: var(--black);
+  font-style: normal;
   text-decoration: none;
 }
 
@@ -235,7 +227,8 @@ body {
     }
     .logo-wrapper {
       flex: 100%;
-      width: auto
+      display: flex;
+      justify-content: center;
     }
 
     .menu-wrapper {
@@ -261,73 +254,148 @@ body {
 
 /* Header */
   header {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(-35deg, var(--primary-color), var(--secondary-color), var(--highlight-color), var(--primary-color));
+    background-size: 400% 400%;
+    animation: header-gradient 15s ease infinite;
   }
 
-  .header-wrapper {
+  .header-content {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @keyframes header-gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%
+    }
+}
+
+  .header-copy-wrapper {
+    order: 1;
+    flex: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header-copy-wrapper h1 {
+    font-size: 3em;
+    padding-left: 20px
+  }
+
+  .top-header-h1 {
+    font-weight: 300
+  }
+
+  .bottom-header-h1 {
+    font-weight: 900
+  }
+
+  .header-image-wrapper {
+    order: 2;
+    flex: 50%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .blob-background {
+    --width: calc((100vw*.8)/2);
+    width: var(--width);
+    height: calc(var(--width)/2);
+    background-image: url('../images/blob-background.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: blob-transform 20s linear infinite;
     position: relative;
-    overflow: hidden
-  }
-  
-  .header-tow-truck-wrapper {
-    --width: 1064px;
-    position: absolute;
-    width: var(--width);
-    height: calc(0.2706766917293233 * var(--width));
-    bottom: 0;
-    left: calc(50% - var(--width)/2);
   }
 
-  .blob {
-    position: absolute;
-    z-index: -7;
-    transform: translate(-50%, -50%);
-    animation: blob-transform 12s linear infinite;
-  }
+  @media only screen and (max-width: 550px) {
+    .header-copy-wrapper {
+      flex: 100%;
+      height: 30%;
+      align-items: flex-end
+    }
 
-  .blob-1 {
-    --width: 660px;
-    background: linear-gradient(217deg, #18a7ae, #7046aa);
-    width: var(--width);
-    height: var(--width);
-    top: 0;
-    left: 0;
-  }
+    .header-image-wrapper {
+      flex: 100%;
+      height: 70%;
+      align-items: flex-start
+    }
 
-  .blob-2 {
-    --width: 660px;
-    background: linear-gradient(217deg, #18a7ae, #7046aa);
-    width: var(--width);
-    height: var(--width);
-    top: 100%;
-    left: 100%;
+    .blob-background {
+      --width: 90vw
+    }
   }
 
   @keyframes blob-transform{
     0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
-  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
-  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
-  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
-  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
-  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
-  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
-}
+    14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+    28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+    42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+    56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+    70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+    84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+    }
+
+  .tow-truck {
+    --truck-width: calc(var(--width) * 0.665625);
+    position: absolute;
+    bottom: calc(var(--width) * -0.02);
+    left: calc(var(--truck-width) - (var(--width)/2));
+    width: var(--truck-width);
+    height: calc(var(--truck-width) * 0.2706093967404767);
+    background-image: url('../images/action-towing-truck.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .tow-woman {
+    --woman-width: calc(var(--width) * 0.1325);
+    position: absolute;
+    bottom: calc(var(--width) * -0.02);
+    left: calc(var(--width) * 0.0575);
+    width: var(--woman-width);
+    height: calc(var(--woman-width) * 1.216981132075472);
+    background-image: url('../images/tow-woman.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+  }
+
 /* End Header */
 
 /* About */
   #about {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 800px;
   }
 /* End About */
 
 /* Contact */
   #contact {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 800px;
   }
 
 /* End Contact */
