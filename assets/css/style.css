@@ -110,9 +110,9 @@
 :root {
   --black: #403233;
   --white: #F19A3E;
-  --primary-color: #98D9C2;
-  --secondary-color: #ABEDC6;
-  --highlight-color: #B9FFB7;
+  --primary-color: red;
+  --secondary-color: blue;
+  --highlight-color: yellow;
 }
 
 body {
@@ -258,7 +258,7 @@ body {
     height: 100vh;
     display: flex;
     justify-content: center;
-    background: linear-gradient(-35deg, var(--primary-color), var(--secondary-color), var(--highlight-color), var(--primary-color));
+    background: linear-gradient(-35deg, var(--primary-color), var(--secondary-color), var(--highlight-color));
     background-size: 400% 400%;
     animation: header-gradient 15s ease infinite;
   }
