@@ -895,11 +895,6 @@
 	<path class="st21" d="M569.5,253.1c-2.1,0-3.8,1.6-3.8,3.7l-0.8,6.3h5c2.6-4,6.1-6.6,9.9-8.9c-0.7-0.7-1.7-1.1-2.7-1.1H569.5z"/>
 </g>
 <g id="icons">
-	<animateMotion
-		dur="20s"
-		repeatCount="indefinite"
-		path="M0,50 C20,-50 180,0 180,0 C180-50 20,150 20,50 z"
-	/>
 	<g id="icon-1">
 		<g>
 			<ellipse class="st15" cx="149.4" cy="240.2" rx="62.8" ry="62.6"/>
