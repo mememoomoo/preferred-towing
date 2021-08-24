@@ -257,6 +257,10 @@ body {
   .about-li:focus,
   .contact-li:hover,
   .contact-li:focus {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform:scale(1.2);
+    -o-transform: scale(1.2);
     transform: scale(1.2);
     transition: all ease 500ms;
   }
@@ -341,6 +345,12 @@ body {
     flex-wrap: wrap;
   }
 
+  @media only screen and (max-width: 960px) {
+    .header-content {
+      flex-direction: column
+    }
+  }
+
   .header-copy-wrapper {
     order: 1;
     flex: 50%;
@@ -353,16 +363,43 @@ body {
     flex-wrap: nowrap
   }
 
+  @media only screen and (max-width: 960px) {
+    .header-copy-wrapper {
+      justify-content: flex-end;
+      width: auto
+    }
+  }
+
   .header-title {
     order: 1;
-    width: calc(50vw - (25vw * 0.5));
+    width: auto;
     display: flex;
     align-items: center
+  }
+
+  @media only screen and (min-width: 1600px) {
+    .header-title {
+      width: calc(50vw - (25vw * 0.5));
+    }
   }
 
   .header-title h1 {
     font-size: 3em;
     padding-left: 20px
+  }
+
+  @media only screen and (max-width: 600px) {
+    .header-title h1 {
+      font-size: 2.4em
+    }
+  }
+
+  @media only screen and (max-width: 473px) {
+    .header-title h1 {
+      padding-left: 0;
+      text-align: center;
+      font-size: 3em
+    }
   }
 
   .top-header-h1 {
@@ -382,11 +419,29 @@ body {
     margin-top: 20px;
   }
 
+  @media only screen and (max-width: 1200px) {
+    .header-button-container {
+      width: 93%
+    }
+  }
+
+  @media only screen and (max-width: 473px) {
+    .header-button-container {
+      width: 100%;
+      justify-content: center
+    }
+  }
+
   .header-button-wrapper {
     display: flex;
     justify-content: flex-end;
     position: relative;
-    padding-left: 25px
+  }
+
+  @media only screen and (min-width: 1600px) {
+    .header-button-wrapper {
+      padding-left: 25px
+    }
   }
 
   .header-image-wrapper {
@@ -411,7 +466,13 @@ body {
     position: relative;
   }
 
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 960px) {
+    .blob-background {
+      --width: calc(100vw * 0.8);
+    }
+  }
+
+  /* @media only screen and (max-width: 550px) {
     .header-copy-wrapper {
       flex: 100%;
       height: 30%;
@@ -427,7 +488,7 @@ body {
     .blob-background {
       --width: 90vw
     }
-  }
+  } */
 
   @keyframes blob-transform{
     0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
@@ -501,9 +562,16 @@ body {
     height: calc(var(--width) * 0.5010964912280702);
   }
 
+  @media only screen and (max-width: 690px) {
+    .about-tow-truck {
+      --width: 100vw
+    }
+  }
+
   .about-wrapper {
     display: flex;
     align-items: center;
+    flex-wrap: wrap
   }
 
   .about-header-copy {
@@ -518,6 +586,18 @@ body {
     flex: 50%;
     width: 100%;
     height: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .about-button-container {
+      justify-content: flex-start;
+      padding-top: 20px;
+    }
+  }
+
+  .about-button-wrapper {
     display: flex;
     justify-content: flex-end;
     position: relative
@@ -562,12 +642,24 @@ body {
 
   @keyframes pulse {
     0% {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
       transform: scale(1);
     }
     50% {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
       transform: scale(1.2);
     }
     100% {
+      -webkit-transform: scale(1);
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
       transform: scale(1)
     }
   }
@@ -588,52 +680,59 @@ body {
     background-repeat: no-repeat
   }
 
+  @media only screen and (max-width: 380px) {
+    .service-image-wrapper {
+      width: 75px;
+      height: 75px;
+    }
+  }
+
   .flat-tire {
     background-image: url("../images/flat-tire.svg");
-    width: 70px;
-    height: 70px
+    width: 70%;
+    height: 70%
   }
 
   .key-lock-out {
     background-image: url("../images/key-lock-out.svg");
-    width: 56px;
-    height: 65px
+    width: 56%;
+    height: 65%
   }
 
   .fuel {
     background-image: url("../images/fuel.svg");
-    width: 51px;
-    height: 67px;
+    width: 51%;
+    height: 67%;
   }
 
   .towing {
     background-image: url("../images/towing.svg");
-    width: 80px;
-    height: 33px;
+    width: 80%;
+    height: 33%;
   }
 
   .jump-start {
     background-image: url("../images/jump-start.svg");
-    width: 58px;
-    height: 49px;
+    width: 58%;
+    height: 49%;
   }
 
   .plug-fault {
     background-image: url("../images/plug-fault.svg");
-    width: 58px;
-    height: 61px
+    width: 58%;
+    height: 61%
   }
 
   .heating-problem {
     background-image: url("../images/heating-problem.svg");
-    width: 69px;
-    height: 69px
+    width: 69%;
+    height: 69%
   }
 
   .car-repair {
     background-image: url("../images/car-repair.svg");
-    width: 59px;
-    height: 56px;
+    width: 59%;
+    height: 56%;
   }
 
   .service-copy-wrapper {
@@ -688,6 +787,12 @@ body {
     flex-wrap: nowrap;
     align-items: center;
     z-index: 2;
+  }
+
+  @media only screen and (max-width: 380px) {
+    .contact-info {
+      width: 300px
+    }
   }
 
   .contact-title {
@@ -766,6 +871,12 @@ body {
     position: relative
   }
 
+  @media only screen and (max-width: 986px) {
+    .contact-image-wrapper {
+      display: none
+    }
+  }
+
   .customer-service {
     --width: 40vw;
     --height: calc(var(--width) * 0.8608923884514436);
@@ -787,6 +898,12 @@ body {
     position: absolute;
     background-color: var(--primary-color);
     animation: blobs 12s linear infinite;
+  }
+
+  @media only screen and (max-width: 986px) {
+    .contact-blob {
+      --width: 70vw
+    }
   }
 
   .blob-one {
